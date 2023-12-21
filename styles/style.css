@@ -357,6 +357,9 @@ nav {
 
 .pagamento-evento {
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .pagamento-evento h2 {
