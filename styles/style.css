@@ -1,0 +1,382 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: #070f0c;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.logo {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  background: #070f0c;
+  height: 8vh;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+  z-index: 2; /* Adicione z-index para garantir que o menu apareça acima dos outros elementos */
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vw;
+    height: 92vh;
+    background: #070f0c;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    z-index: 1;
+  }
+
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+
+.titulo-pagina{
+  margin-top: 25px;
+  text-align: center;
+  color: white;
+}
+
+.vendedores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  background-color: #E9EDEC;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px 20px;
+  padding: 20px;
+  width: calc(33.33% - 40px);
+  height: 220px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.card h2,
+.card p {
+  margin-bottom: 10px;
+}
+
+.card button {
+  background-color: #05490a;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card button:hover {
+  background-color: #297fb8;
+}
+
+#catalogo {
+  margin: 30px;
+  padding: 30px;
+  border-radius: 25px;
+  background-color: white;
+}
+
+#catalogo h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#catalogo h2 {
+  margin-top: 20px;
+}
+
+#catalogo .produto {
+  margin-bottom: 20px;
+}
+
+#catalogo h2 {
+  margin-bottom: 20px;
+}
+
+.produto h2 {
+  color: red;
+}
+
+#catalogo button {
+  background-color: #3498db;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: 100px;
+}
+
+#catalogo button:hover {
+  background-color: #297fb8;
+}
+
+.lista-produtos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.card-produto {
+  width: calc(50% - 20px);
+  margin: 10px 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-produto-img{
+  display: flex;
+  justify-content: center;
+}
+
+.card-produto-img img {
+  height: 100px;
+  width: 50px;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-produto-info {
+  padding: 10px;
+  flex-grow: 1;
+}
+
+.card-produto-preco {
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
+.comprar-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .card-produto {
+      width: calc(25% - 20px);
+  }
+}
+
+.anuncie-aqui{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-anuncie-aqui {
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+.card-anuncie-aqui h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-anuncie-aqui h3 {
+  color: #555;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card-anuncie-aqui h3::before {
+  content: '\260E';
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.card-anuncie-aqui button {
+  background-color: #25D366;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-anuncie-aqui button:hover {
+  background-color: #128C7E;
+}
+
+.lista-eventos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card-evento {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px; /* ou ajuste conforme necessário */
+}
+
+.card-evento h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-evento h3 {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.pagamento-evento {
+  margin-top: 10px;
+}
+
+.pagamento-evento h2 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.pagamento-evento img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}
