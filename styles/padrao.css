@@ -6,8 +6,13 @@
 }
 
 body {
-    background: url("/assets/img/img-fundo.jpg") center center;
+    background: url("/assets/img/fundogarden.jpg") center center;
     background-size: cover;
     height: 92vh;
 }
 
+.body-eventos {
+    background: url("/assets/img/fundoeventos.png") center center;
+    background-size: cover;
+    height: 92vh;
+}

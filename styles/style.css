@@ -130,6 +130,8 @@ nav {
   margin-top: 25px;
   text-align: center;
   color: white;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .vendedores {
